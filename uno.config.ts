@@ -30,7 +30,7 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        Inter: "Inter:400,500,600,700,800,900",
+        "Markazi Text": "Markazi+Text:400,500,600,700,800,900",
       },
     }),
   ],
