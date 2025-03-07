@@ -3,7 +3,7 @@
     <div class="flex items-center gap-2 justify-center">
       <p class="text-[3rem] font-700">Coming soon!</p>
       <icon
-        name="face-grin-wink"
+        name="i-fa6-regular:face-grin-wink"
         size="large"
       />
     </div>

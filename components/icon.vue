@@ -8,8 +8,6 @@ const props = defineProps<{
   size?: SizeType
 }>()
 
-const iconName = computed(() => `i-fa6-regular:${props.name ?? ''}`)
-
 const iconSize = computed(() => {
   switch (props.size) {
     case 'small':
@@ -23,5 +21,5 @@ const iconSize = computed(() => {
 </script>
 
 <template>
-  <span :class="[iconName, iconSize]"></span>
+  <span :class="[props.name, iconSize]"></span>
 </template>
