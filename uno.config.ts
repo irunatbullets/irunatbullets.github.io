@@ -7,7 +7,7 @@ import {
   transformerDirectives,
 } from "unocss";
 
-import presetWind4 from "@unocss/preset-wind4";
+import presetWind3 from "@unocss/preset-wind3";
 
 export default defineConfig({
   shortcuts: [
@@ -19,7 +19,7 @@ export default defineConfig({
     },
   },
   presets: [
-    presetWind4(),
+    presetWind3(),
     presetIcons({
       extraProperties: {
         'display': 'inline-block',
