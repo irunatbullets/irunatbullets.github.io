@@ -8,7 +8,5 @@ const { data: page } = await useAsyncData(route.path, () => {
 </script>
 
 <template>
-  <div>
-    <ContentRenderer v-if="page" :value="page" />
-  </div>
+  <ContentRenderer v-if="page" :value="page" />
 </template>
