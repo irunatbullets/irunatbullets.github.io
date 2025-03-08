@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   css: ["@unocss/reset/tailwind.css", "~/assets/css/main.css"],
   modules: [
     '@unocss/nuxt',
+    '@nuxt/content'
   ],
   app: {
     baseURL: "",
