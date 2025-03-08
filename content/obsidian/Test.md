@@ -1,1 +1,1 @@
-Okay? This should overwrite the nuxt file.
+This should be the only file in the obsidian directory.
