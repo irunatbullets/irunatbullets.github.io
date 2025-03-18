@@ -21,6 +21,7 @@ const {
       fields: [
         "blocks.collection",
         "blocks.item.title",
+        "blocks.item.emoji",
         "blocks.item.content",
         "blocks.item.style.background",
         "blocks.item.style.background_image"
