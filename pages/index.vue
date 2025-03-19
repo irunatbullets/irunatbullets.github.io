@@ -2,32 +2,47 @@
   <div>
     <p v-if="pending">Loading...</p>
     <p v-else-if="error">Error loading data.</p>
-    <pre v-else>{{ homepage }}</pre>
+    <div v-else-if="homepage">
+      <component
+        v-for="(block, index) in homepage.blocks"
+        :key="index"
+        :is="getComponent(block.collection)"
+        :item="block.item"
+      />
+    </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import BlockWelcome from "~/components/block/welcome.vue";
+import type { Homepage } from "~/types";
+
 const { getSingletonItem } = useDirectusItems();
 
-// Fetch the singleton item from Directus
 const {
   data: homepage,
   pending,
   error,
-} = await useAsyncData("homepage", async () => {
+} = await useAsyncData<Homepage>("homepage", async () => {
   return getSingletonItem({
     collection: "homepage",
     params: {
       fields: [
         "blocks.collection",
-        "blocks.item.title",
-        "blocks.item.subtitle",
-        "blocks.item.emoji",
-        "blocks.item.content",
-        "blocks.item.style.background",
-        "blocks.item.style.background_image"
+        "blocks.item.*",
+        "blocks.item.style.*",
       ],
     },
   });
 });
+
+ const getComponent = (collection: string) => {
+  switch (collection) {
+    case "block_welcome":
+      return BlockWelcome;
+    default:
+      return "div"
+  }
+ }
+
 </script>
