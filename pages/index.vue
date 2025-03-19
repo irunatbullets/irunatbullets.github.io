@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p v-if="pending">Loading...</p>
+    <p v-if="status === 'pending'">Loading...</p>
     <p v-else-if="error">Error loading data.</p>
     <div v-else-if="homepage">
       <component
@@ -14,35 +14,30 @@
 </template>
 
 <script setup lang="ts">
-import BlockWelcome from "~/components/block/welcome.vue";
-import type { Homepage } from "~/types";
+import BlockWelcome from '~/components/block/welcome.vue'
+import type { Homepage } from '~/types'
 
-const { getSingletonItem } = useDirectusItems();
+const { getSingletonItem } = useDirectusItems()
 
 const {
   data: homepage,
-  pending,
+  status,
   error,
-} = await useAsyncData<Homepage>("homepage", async () => {
+} = await useAsyncData<Homepage>('homepage', async () => {
   return getSingletonItem({
-    collection: "homepage",
+    collection: 'homepage',
     params: {
-      fields: [
-        "blocks.collection",
-        "blocks.item.*",
-        "blocks.item.style.*",
-      ],
+      fields: ['blocks.collection', 'blocks.item.*', 'blocks.item.style.*'],
     },
-  });
-});
+  })
+})
 
- const getComponent = (collection: string) => {
+const getComponent = (collection: string) => {
   switch (collection) {
-    case "block_welcome":
-      return BlockWelcome;
+    case 'block_welcome':
+      return BlockWelcome
     default:
-      return "div"
+      return 'div'
   }
- }
-
+}
 </script>

@@ -1,7 +1,12 @@
 <template>
   <BlockContainer :style="item.style">
     <div>
-      <h1 class="text-[clamp(40px,5.208vw,100px)] leading-none font-black">{{ item.title }}<span class="inline-block animate-bounce"><span class="inline-block rotate-[25deg]">{{ item.emoji }}</span></span></h1>
+      <h1 class="text-[clamp(40px,5.208vw,100px)] leading-none font-black text-white">
+        <span class="inline-block backdrop-saturate-200 backdrop-brightness-70">{{ item.title }}</span>
+        <span class="inline-block animate-bounce">
+          <span class="inline-block rotate-[25deg]">{{ item.emoji }}</span>
+        </span>
+      </h1>
     </div>
   </BlockContainer :style="item.style">
 </template>
