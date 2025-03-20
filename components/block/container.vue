@@ -13,27 +13,19 @@ const props = defineProps<{
   style: BlockStyle
 }>()
 
-const getColor = (color: string) => {
-  switch (color) {
-    case 'red':
-      return '#e35169'
-    case 'orange':
-      return '#ffa439'
-    case 'yellow':
-      return '#ffc23b'
-    case 'green':
-      return '#2ecda7'
-    case 'blue':
-      return '#3399ff'
-    case 'purple':
-      return '#6644ff'
-    case 'black':
-      return '#18222f'
-    case 'white':
-      return '#ffffffd'
-    default:
-      return 'transparent'
-  }
+const colorMap: { [key: string]: string } = {
+  red: '#e35169',
+  orange: '#ffa439',
+  yellow: '#ffc23b',
+  green: '#2ecda7',
+  blue: '#3399ff',
+  purple: '#6644ff',
+  black: '#18222f',
+  white: '#ffffffd',
+}
+
+const getColor = (color: string): string => {
+  return colorMap[color] || 'transparent'
 }
 
 const styleObject = computed(() => ({

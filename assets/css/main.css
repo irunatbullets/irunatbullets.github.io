@@ -1,13 +1,6 @@
 :root {
-  font-family:
-    "Markazi Text",
-    "apple garamond",
-    baskerville,
-    "times new roman",
-    "droid serif",
-    times,
-    "source serif pro",
-    serif;
+  font-family: 'Markazi Text', 'apple garamond', baskerville, 'times new roman',
+    'droid serif', times, 'source serif pro', serif;
   text-rendering: optimizeLegibility;
 }
 
@@ -18,4 +11,9 @@ html {
 
 body {
   min-height: 100vh;
+}
+
+.emoji {
+  font-family: 'Noto Emoji';
+  vertical-align: middle;
 }

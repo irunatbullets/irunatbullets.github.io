@@ -5,9 +5,9 @@ import {
   presetWebFonts,
   transformerVariantGroup,
   transformerDirectives,
-} from "unocss";
+} from 'unocss'
 
-import presetWind3 from "@unocss/preset-wind3";
+import presetWind3 from '@unocss/preset-wind3'
 
 export default defineConfig({
   shortcuts: [
@@ -22,7 +22,7 @@ export default defineConfig({
     presetWind3(),
     presetIcons({
       extraProperties: {
-        'display': 'inline-block',
+        display: 'inline-block',
         'vertical-align': 'middle',
         // ...
       },
@@ -30,9 +30,10 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        "Markazi Text": "Markazi+Text:400,500,600,700,800,900",
+        'Markazi Text': 'Markazi+Text:400,500,600,700,800,900',
+        'Noto Emoji': 'Noto+Emoji',
       },
     }),
   ],
   transformers: [transformerVariantGroup(), transformerDirectives()],
-});
+})
