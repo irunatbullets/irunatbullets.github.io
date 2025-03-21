@@ -1,6 +1,9 @@
 <template>
   <div :style="styleObject" class="flex min-h-screen">
-    <div class="container mx-auto flex grow items-center justify-center p-8">
+    <div
+      class="/*container*/ mx-auto flex grow items-center justify-center p-8
+        backdrop-blur-[10rem]"
+    >
       <slot />
     </div>
   </div>
