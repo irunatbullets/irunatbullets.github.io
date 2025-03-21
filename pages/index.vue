@@ -14,7 +14,8 @@
 </template>
 
 <script setup lang="ts">
-import type { Homepage } from '~/types'
+import type { Component } from 'vue'
+import type { Homepage, Block } from '~/types'
 
 import BlockWelcome from '~/components/block/welcome.vue'
 
@@ -33,11 +34,11 @@ const {
   })
 })
 
-const componentMap: { [key: string]: any } = {
+const componentMap: Record<Block['collection'], Component> = {
   block_welcome: BlockWelcome,
 }
 
-const resolveComponent = (collection: string): any => {
+const resolveComponent = (collection: Block['collection']): Component => {
   return componentMap[collection] || 'div'
 }
 </script>

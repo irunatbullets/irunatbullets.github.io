@@ -1,5 +1,15 @@
+export type Color =
+  | 'red'
+  | 'orange'
+  | 'yellow'
+  | 'green'
+  | 'blue'
+  | 'purple'
+  | 'black'
+  | 'white'
+
 export type BlockStyle = {
-  background: string
+  background: 'none' | 'image' | Color
   background_image: string | null
 }
 
