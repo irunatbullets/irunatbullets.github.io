@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { execSync } from 'child_process'
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -17,6 +19,9 @@ export default defineNuxtConfig({
         url: 'https://content.murraynuttall.com/',
       },
       assetsUrl: 'https://content.murraynuttall.com/assets/',
+      lastPublished: execSync('git log -1 --format=%cd --date=iso')
+        .toString()
+        .trim(),
     },
   },
 })
