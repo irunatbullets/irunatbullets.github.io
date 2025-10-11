@@ -35,7 +35,7 @@ const getColor = (background: BlockStyle['background']): string => {
   if (background === 'none' || background === 'image') {
     return 'transparent'
   }
-
+  
   return colorMap[background] || 'transparent'
 }
 
